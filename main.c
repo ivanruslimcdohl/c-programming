@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 
-void main() {
-	printf("ivan rusli");
+int main() {
+	printf("ivan rusli\n");
+	return 1;
 }
