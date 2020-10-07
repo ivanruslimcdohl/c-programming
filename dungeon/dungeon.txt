@@ -1,0 +1,10 @@
+Infinite Tomb Raider
+- Guide your character ('Y') using W, A, S, D key to explore the dungeon
+- You can not pass through wall ('#')
+- Collect the infinite gold ('$')
+- Your character staring point will be randomized within allowed location
+- Gold will be randomly generated within allowed location after the previous one is collected
+- Every movement (valid or not) is counted toward your move count
+- Calculate the score
+
+Have fun!
