@@ -20,7 +20,7 @@ int main()
     printf("processing guestName, char: %c, available letters: %s\n", guestName[i], availableLetters);
 
     int found = 0;
-    for (int j = 0; j < strlen(availableLetters); j++)
+    for (int j = 0; j < strlen(availableLetters); j++)// search guestName[i] in availableLetters
     {
       if (guestName[i] == availableLetters[j])
       {
@@ -39,9 +39,9 @@ int main()
   // hostName
   for (int i = 0; i < strlen(hostName); i++)
   {
-    printf("processing hostName, char: %c, available letters: %s\n", guestName[i], availableLetters);
+    printf("processing hostName, char: %c, available letters: %s\n", hostName[i], availableLetters);
     int found = 0;
-    for (int j = 0; j < strlen(availableLetters); j++)
+    for (int j = 0; j < strlen(availableLetters); j++) // search hostName[i] in availableLetters
     {
       if (hostName[i] == availableLetters[j])
       {
@@ -51,15 +51,16 @@ int main()
       }
     }
 
-    if (found == 0)
+    if (found == 0) // not found
     {
       printf("NO\n");
       return 0;
     }
   }
 
+  printf("successfully processed guestName and hostName, available letters left: %s\n", availableLetters);
   printf("YES\n");
   // TODO: prevent program from closing to accept key press to close
-  getchar(); 
+  getchar();
   return 0;
 }
