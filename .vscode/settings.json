@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "sstream": "c"
+        "default": "nginx",
+        "sstream": "c",
+        "__locale": "c",
+        "ios": "c"
     }
 }
