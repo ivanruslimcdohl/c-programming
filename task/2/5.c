@@ -3,6 +3,7 @@
 
 int main()
 {
+  // int len = 9;
   int len;
   printf("enter length of array: ");
   scanf("%d", &len);
@@ -15,6 +16,16 @@ int main()
     scanf("%d", &arr[i]);
   }
 
+  // arr[0] = -2;
+  // arr[1] = 1;
+  // arr[2] = -3;
+  // arr[3] = 4;
+  // arr[4] = -1;
+  // arr[5] = 2;
+  // arr[6] = 1;
+  // arr[7] = -5;
+  // arr[8] = 4;
+
   printf("input:\t");
   for (int i = 0; i < len; i++)
   {
@@ -23,31 +34,36 @@ int main()
   printf("\n");
 
   // process
-  int largestSum = arr[0];
-  char largestSumText[100];
-  sprintf(largestSumText, "{ %d }", arr[0]);
-  for (int i = 0; i < len; i++)
+  int largestSum = -2147483648;
+  char largestSumText[100] = "{ }";
+  for (int i = 0; i < len; i++) // determine start
   {
-    int localLargestSum = 0;
+    printf("\nstart from %d (index %d):\n", arr[i], i);
+
+    int localLargestSum = -2147483648;
     char localLargestSumText[100] = "{ ";
 
-    for (int j = i; j < len; j++)
+    for (int j = i; j < len; j++) // determine possible combination
     {
-      int tempLargestSum = 0;
-      char tempLargestSumText[100] = "{ ";
-      for (int k = i; k <= j; k++)
+      int tempSum = 0;
+      char tempSumText[100] = "{ ";
+      for (int k = i; k <= j; k++) // to sum them up
       {
-        tempLargestSum += arr[k];
+        printf("%d ", arr[k]);
+        tempSum += arr[k];
         char strTemp[100];
         sprintf(strTemp, "%d ", arr[k]);
-        strcat(tempLargestSumText, strTemp);
+        strcat(tempSumText, strTemp);
       }
-      strcat(tempLargestSumText, "}");
-      if (tempLargestSum > localLargestSum)
+
+      printf(" = %d", tempSum);
+      strcat(tempSumText, "}");
+      if (tempSum > localLargestSum)
       {
-        localLargestSum = tempLargestSum;
-        strcpy(localLargestSumText, tempLargestSumText);
+        localLargestSum = tempSum;
+        strcpy(localLargestSumText, tempSumText);
       }
+      printf("\n");
     }
     if (localLargestSum > largestSum)
     {

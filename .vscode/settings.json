@@ -3,6 +3,11 @@
         "default": "nginx",
         "sstream": "c",
         "__locale": "c",
-        "ios": "c"
+        "ios": "c",
+        "__bit_reference": "c",
+        "algorithm": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "unordered_map": "c"
     }
 }

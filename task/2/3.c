@@ -24,9 +24,16 @@ int main()
   // process
   for (;;)
   {
+
+    printf("\nretry from start: \n");
     int isSwapHappen = 0;
     for (int i = 0; i < len; i++)
     {
+      printf("before at i=%d: ", i);
+      for (int i = 0; i < len; i++)
+      {
+        printf("%d ", arr[i]);
+      }
       // el is 0, not last index, and < from next element
       if ((arr[i] == 0) && (i != len - 1) && (arr[i] < arr[i + 1]))
       {
@@ -35,6 +42,15 @@ int main()
         arr[i] = temp;
         isSwapHappen = 1;
       }
+
+      printf(" ==> ");
+
+      printf("after at i=%d: ", i);
+      for (int i = 0; i < len; i++)
+      {
+        printf("%d ", arr[i]);
+      }
+      printf("\n");
     }
 
     if (isSwapHappen == 0)
