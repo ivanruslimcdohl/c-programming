@@ -26,7 +26,7 @@ int main()
   }
   printf("\n");
 
-  int divisor[len][10];
+  int divisor[len][100];
   for (int i = 0; i < len; i++) // determine divisor of each
   {
     int currIdx = 0;
@@ -104,6 +104,7 @@ int main()
       }
       printf("\n");
     }
+    printf("\n");
   }
   printf("\nggcd: %d\n", ggcd);
 
