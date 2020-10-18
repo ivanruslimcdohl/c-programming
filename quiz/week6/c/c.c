@@ -37,16 +37,17 @@ int main()
         scanf("%d", &a[i]);
     }
 
-    int currQ = 0;
-    int notFound = 0;
     for (int i = 0; i < q; i++)
     {
+        int currQ = 0;
+        int found = -1;
         scanf("%d", &currQ);
         int l = 0;
         int r = 0;
 
         printf("Q: %d, l: %d, r: %d\n", currQ, l, r);
         int idxStart = 0;
+        int doneProcess = 0;
         for (;;)
         {
             int currSum = 0;
@@ -57,20 +58,25 @@ int main()
                 {
                     l = idxStart;
                     r = j;
-                    goto printRes;
+                    found = 1;
                 }
                 else if ((idxStart == n - 1) && (j == n - 1))
                 {
-                    notFound = 1;
-                    goto printRes;
+                    found = 0;
+                }
+                if (found != -1)
+                {
+                    break;
                 }
             }
-
+            if (found != -1)
+            {
+                break;
+            }
             idxStart++;
         }
 
-    printRes:
-        if (notFound == 1)
+        if (found == 0)
         {
             printf("Case%d: %d\n\n", i + 1, -1);
         }
